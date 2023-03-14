@@ -1,463 +1,252 @@
-# Linux  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRbi9aVFq2CV5UxsEhDk4L5Hk_u4nHnSTnsWhnOUNRg4mfdOfWZfJoPGLZL01QvgvIDT8Q&usqp=CAU" width="25" >
+# Cloud
+ Cloud computing is the delivery of computing resources such as servers, storage, databases, networking, software, analytics, and intelligence over the Internet ("the cloud") to offer faster innovation, flexible resources, and economies of scale.
 
-> *Linux* is a free and open-source operating system based on the Unix operating system. It is known for its stability, security, and flexibility, and it has become the most popular operating system for servers and supercomputers.
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRz0AhTRLpnCAPdsMz7ntki-p4k_-ph7PPnmlM0W8L9oUkbO35m_VGgHiS4V1ynDGzGNeo&usqp=CAU" width="90" ><img src="https://www.openbravo.com/blog/wp-content/uploads/2020/03/azure-cloud.jpg" width="90" ><img src="https://camo.githubusercontent.com/f206c21f72582e8e173941e2ebde4bd231b4a91ef1763991aecb79f7bb4566ba/68747470733a2f2f692e6962622e636f2f546271355337312f6763702e706e67" width="90" >
 
-## 1.File Management
 
-- ls       : used to list the files and directories(*excluding hidden files*)
-```
-ls /var
-```
-- cat      : used to display the contents of a file. It can also be used to add the data into the file.
- ```
-cat abc.txt
-```
-- more     : used to to display the contents of a file one screen at a time.
-```
-more abc.txt
-```
-- tail     : used to display last few lines of the file
-```
-tail abc.txt
-```
-- tail -f  : used to to display the last few lines of a file. This is useful for monitoring log files and other files that are updated frequently.
-```
-tail -f syslog
-```
-- locate   : used to find files by name. It uses a database of file names and locations to quickly find files.
-```
-locate abc.txt
-```
-- cd       : used to change from one directory to another specified directory
-```
-cd /etc
-```
-- touch    : used to create a new empty file and can also adds the data into the file
-```
-touch abc.txt
-```
-- mkdir    : used to create a new directory
-```
-mkdir folder
-```
-- move     : used to move or rename the files and directories
-```
-mv /tmp/tomcat /opt/Tomcat
-```
-- rm       : used to remove the files and directories
-```
-rm abc.txt
-```
-- rmdir    : used to remove an empty directory
-```
-rmdir folder
-```
-- vi       : used to create, edit, and modify text files.
-```
-vi /folder/abc.txt
-```
-   ###### It has insertion mode and command mode
-  - Esc : helps to switch from insertion mode to command mode
-  - i   : helps to switch from command mode to insertion mode
-  - dd  : used to delete the entire line where cursor placed
-  - x   : used to delete the character from where the cursor is placed
-  - q!  : used to quit from the vi without saving (!-forcefully)
-  - wq! : used to save and quit (!-forcefully)
- 
-#### Search for a word in vi and replace a word with new word in vi (:%s/oldword/newword/g)
 
-	s- substitue
-	%- used to replace the word in the entire file (in all lines)
-	g- global search
+#### There are three main types of cloud services:
+
+   - **Infrastructure as a Service** (IaaS): In this model, the cloud provider offers virtualized computing resources, such as servers, storage, and networking. Customers can use these resources to build and deploy their own applications and services. Examples of IaaS providers include Amazon Web Services (AWS), Microsoft Azure, and Google Cloud Platform (GCP).
+
+   - **Platform as a Service** (PaaS): This model provides a platform for customers to build, deploy, and manage their own applications without having to worry about the underlying infrastructure. PaaS providers offer a complete development and deployment environment, including development tools, databases, and middleware. Examples of PaaS providers include AWS Elastic Beanstalk, Microsoft Azure App Service, and Heroku.
+
+   - **Software as a Service** (SaaS): In this model, the cloud provider offers fully-managed applications that customers can use over the internet. Customers do not need to manage the underlying infrastructure or software, and can simply access the application through a web browser or other client. Examples of SaaS providers include Salesforce, Dropbox, and Google Workspace.
+
+#### There are three main types of cloud platforms:
+
+   - **Public Cloud**: These platforms are owned and operated by third-party providers, such as AWS, Microsoft Azure, and GCP. Customers can access these platforms over the internet and pay for the resources they use.
+
+   - **Private Cloud**: These platforms are owned and operated by an individual organization or a third-party provider on behalf of the organization. Private cloud platforms are typically used by organizations that have strict security and compliance requirements.
+
+   - **Hybrid Cloud**: These platforms combine public and private cloud services, allowing customers to use both on-premises and cloud resources to build and deploy their applications. Hybrid cloud platforms can provide greater flexibility and scalability than either public or private cloud platforms on their own.
+
+# AWS <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Amazon_Web_Services_Logo.svg/800px-Amazon_Web_Services_Logo.svg.png" width="60" >
+
+ *AWS* (Amazon Web Services) is a cloud computing platform offered by Amazon. It provides a wide range of cloud-based computing services, including computing power, storage, database management, analytics, machine learning, security, and more. AWS allows businesses and organizations to quickly and easily access the computing resources they need on a pay-as-you-go basis, without having to invest in expensive hardware or infrastructure.
+
+
+
+## 1 KMS (Key Management Service) :
+> *KMS* is a fully managed service that helps you create and control encryption keys to protect your data in AWS services and in your own applications. KMS provides a highly available key storage, management, and auditing solution for your encryption keys. You can use KMS to encrypt data stored in Amazon S3, Amazon EBS, Amazon RDS, and other AWS services. You can also use KMS to encrypt data in your own applications, and to control the access to the encryption keys themselves.
+
+- #### Create an Encryption Key with KMS:
+	#####   Go to the AWS Management Console and open the KMS console.
+	<img src="https://www.jscape.com/hs-fs/hubfs/Using%20AWS%20KMS%20To%20Encrypt%20Files%20You%20Upload%20To%20Your%20S3%20Trading%20Partner%20-%20kms%20service.png?width=837&name=Using%20AWS%20KMS%20To%20Encrypt%20Files%20You%20Upload%20To%20Your%20S3%20Trading%20Partner%20-%20kms%20service.png" width="500" height="250">
+	
+	#####  Click on "Create key" button and follow the prompts to create a new KMS encryption key.
+	<img src="https://blogs.halodoc.io/content/images/2020/12/Screenshot-2020-11-04-at-11.42.04-AM.png" width="500" height="250">
+	
+	#####  Choose the appropriate key policy and set permissions for the key.
+	<img src="https://docs.incorta.com/static/23dcb29490b083799b66bdc2095dfd6e/d67fd/aws_image29.png" width="500" height="250">
+	
+	#####  Once the key is created, copy the ARN for the key. You will need this ARN later to associate the key with an EC2 instance.
+	<img src="https://docs.aws.amazon.com/images/kms/latest/developerguide/images/console-key-detail-view-symmetric-sm.png" width="630" height="300">
+
+## 2 Security Groups:
+> A *security group* acts as a virtual firewall for your EC2 instances to control incoming and outgoing traffic. You can use security groups to specify inbound and outbound rules that allow traffic from specific IP addresses, protocols, and ports. You can also use security groups to restrict traffic to specific security groups, which can help you enforce security policies and protect your applications and data.
+
+****Inbound rules**** are used to allow or block incoming traffic to your resource.
+
+****Outbound rules**** are used to allow or block outgoing traffic from your resource.
+
+- #### Create a Security Group:
+	##### Go to the AWS Management Console and open the EC2 console at https://console.aws.amazon.com/ec2/
+	<img src="https://res.cloudinary.com/practicaldev/image/fetch/s--zz2eYbRC--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/rv4yanm70lsvwesa02ww.png" width="500" height="250">
+	
+	##### Click on "Security Groups" on the left-hand side menu and then click on "Create Security Group".
+	<img src="https://www.howtogeek.com/wp-content/uploads/csit/2021/06/3fa1d51d.png?trim=1,1&bg-color=000&pad=1,1" width="500" height="250">
+
+	##### Give the security group a name and description.
+	<img src="https://cloudacademy.com/wp-content/uploads/2015/11/Picture1-1.png" width="500" height="250">
+	
+	##### Add inbound rules to allow traffic only on necessary ports. 
+	For example, if you are setting up a web server, you may want to allow traffic on ports 80 and 443.
+	<img src="https://i.stack.imgur.com/jws1t.png" width="500" height="250">
+	
+	##### Associate the security group with your EC2 instance.
+	<img src="https://static.javatpoint.com/tutorial/aws/images/aws-security-group5.png" width="500" height="250">
+	
+## 3 SSH keys:
+> *SSH* keys are used for secure remote access to your EC2 instances. SSH keys are generated in pairs – a public key and a private key. You upload the public key to your EC2 instances, and then use the corresponding private key to authenticate when you connect to the instances via SSH.
+
+- ### Create an SSH key pair in AWS:
+
+   ##### Open the Amazon EC2 console at https://console.aws.amazon.com/ec2/
+   <img src="https://docs.aws.amazon.com/images/ground-station/latest/ug/images/ssh-keypair.png" width="500" height="250">
+   
+   ##### Choose "Create Key Pair."
+   <img src="https://leaherb.com/wp-content/uploads/AWS_Console_Key_Pairs.png" width="500" height="250">
+   
+   ##### Enter a name for your key pair in the "Key pair name" field and choose the file format for your private key and select "Create Key Pair."
+   The most common format is "PEM."
+   
+   <img src="https://www.how2shout.com/linux/wp-content/uploads/2021/08/Create-SSH-ec2-Key-Pair.png" width="500" height="250">
+   
+   ##### The private key file will automatically download to your computer. Save the private key file to a secure location.
+   <img src="https://www.ktexperts.com/wp-content/uploads/2020/10/3-7.png" width="500" height="250">
+   
+## 4 EC2 Instances: 
+ > *Amazon Elastic Compute Cloud* (EC2) is a web service that provides resizable compute capacity in the cloud. EC2 instances are virtual servers that run on Amazon's cloud infrastructure.
+
+- **Amazon EC2** provides a wide range of instance types optimized to fit different use cases. Each instance type is designed to offer a specific combination of CPU, memory, storage, and networking capacity. 
+ 	- **General Purpose**: These instances provide a balance of compute, memory, and networking resources and are suitable for a variety of workloads such as web servers, small and medium databases, and enterprise applications. Some examples of general purpose instance types are t3, m5, and a1.
+
+    - **Compute Optimized**: These instances provide high compute power and are suitable for compute-intensive workloads such as batch processing, scientific modeling, and high-performance computing. Some examples of compute optimized instance types are c5 and c6g.
+
+   - **Memory Optimized**: These instances provide high memory capacity and are suitable for memory-intensive workloads such as big data processing, in-memory databases, and real-time analytics. Some examples of memory optimized instance types are r5 and x1.
+
+   - **Storage Optimized**: These instances provide high storage capacity and are suitable for storage-intensive workloads such as NoSQL databases, data warehousing, and Hadoop clusters. Some examples of storage optimized instance types are i3 and d2.
+
+   - **Accelerated Computing**: These instances provide specialized hardware such as GPUs and FPGAs and are suitable for compute-intensive workloads such as machine learning, graphics rendering, and video encoding. Some examples of accelerated computing instance types are p3 and g4.
+
+   
+ ### Volumes: 
+> Amazon EC2 provides two types of volumes - Amazon Elastic Block Store (EBS) volumes and instance store volumes. 
+ - **EBS** volumes provide persistent block-level storage that can be attached to EC2 instances. 
+ - Instance store volumes provide temporary block-level storage that is physically attached to the host machine.
+
+### AMIs: 
+> *Amazon Machine Images* (AMIs) are pre-configured virtual machines that contain an operating system, application server, and applications. You can use these images to launch EC2 instances. Amazon provides a variety of public AMIs for popular operating systems and software stacks, or you can create your own custom AMIs.
+
+### Snapshots: 
+> *Amazon snapshots* are point-in-time copies of EBS volumes. You can use snapshots to create new EBS volumes, or to restore an existing EBS volume to a previous state. Snapshots are stored in Amazon S3 and are highly durable and scalable.
+
+
+### Elastic IPs: 
+> An *Elastic IP* is a static, public IP address that you can allocate to your account and assign to an instance. This IP address can be remapped to another instance if needed.
+
+
+
+## The steps to create an EC2 instance, connect to it with SSH, and install various packages:
+
+###  Step 1: Create an EC2 Instance
+
+   ##### Go to the Amazon EC2 console at https://console.aws.amazon.com/ec2/.
+   <img src="http://res.cloudinary.com/dyd911kmh/image/upload/f_auto,q_auto:best/v1511519108/2_ClickonEC2_Red_tkujys.png" width="500" height="250">
+   
+   ##### Click on the "Launch Instance" button.
+   <img src="https://k21academy.com/wp-content/uploads/2020/12/1-68.png" width="500" height="250">
+   
+   ##### Choose an Amazon Machine Image (AMI) for your instance. This is the software that will run on your instance.
+   <img src="https://static.javatpoint.com/tutorial/aws/images/aws-security-group.png" width="500" height="250">
+   
+   ##### Choose an instance type. This determines the hardware resources that will be allocated to your instance.
+   <img src="https://static.javatpoint.com/tutorial/aws/images/aws-security-group1.png" width="500" height="250">
+   
+   ##### Configure your instance details. This includes the number of instances to launch, network settings.
+   <img src="https://static.javatpoint.com/tutorial/aws/images/aws-security-group2.png" width="500" height="250">
+   
+   ##### Attach the EBS Volume to your EC2 instance.
+   <img src="https://static.javatpoint.com/tutorial/aws/images/aws-security-group3.png" width="500" height="250">
+    
+   ##### Add tags to your instance (optional).
+   <img src="https://static.javatpoint.com/tutorial/aws/images/aws-security-group4.png" width="500" height="250">
+   
+   ##### Configure security groups. This determines the inbound and outbound traffic that is allowed to your instance.
+   <img src="https://static.javatpoint.com/tutorial/aws/images/aws-security-group5.png" width="500" height="250">
+   
+   ##### Review your instance details and launch the instance.
+   <img src="http://res.cloudinary.com/dyd911kmh/image/upload/f_auto,q_auto:best/v1511519109/6_ReviewInstanceLaunch_Red_ugndox.png" width="500" height="250">
+   
+   ##### Create a key pair if you don't have one already. This is used to securely connect to your instance.
+   <img src="https://static.javatpoint.com/tutorial/aws/images/aws-security-group8.png" width="500" height="250">
+
+###  Step 2: Connect to EC2 with SSH
+
+   - Open a terminal window on your local machine.
+   - Navigate to the directory where your key pair is stored.
+   - Set the permissions on your key pair file with the command ``` chmod 400 your_key_pair.pem ```.
+   - Connect to your instance with the command ``` ssh -i your_key_pair.pem ec2-user@your_instance_public_ip_address ```.
+
+###  Step 3: Install Various Packages
+
+Once you have connected to your instance, you can install various packages using the package manager for your operating system. For example, if you are using Amazon Linux 2, you can use the yum package manager.
+
+###### Here are some example commands to install various packages:
+
+Install Apache web server: 
+    
+    
+    sudo yum install httpd 
+     
+Install MySQL: 
+    
+    
+    sudo yum install mysql-server 
+Install Git: 
+    
+    
+    sudo yum install git 
+    
+
+## The steps to create a snapshot from the root volume of an EC2 instance and create a custom AMI from the snapshot:
+
+### Step 1: Create a Snapshot
+
+   - Go to the Amazon EC2 console at https://console.aws.amazon.com/ec2/.
+   - Select the instance volume for which you want to create a snapshot.
+   - From the "Actions" dropdown menu, select "Create Snapshot".
+   - In the "Create Snapshot" dialog box, enter a name and description for the snapshot.
+   - Click on the "Create Snapshot" button.
+
+### Step 2: Create a Custom AMI from the Snapshot
+
+   - In the EC2 console, select the snapshot you just created.
+   - From the "Actions" dropdown menu, select "Create Image".
+   - In the "Create Image" dialog box, enter a name and description for the AMI.
+   - Choose the instance type that you want to use for the AMI.
+   - Choose the root device volume and the snapshot you just created.
+   - Configure any additional settings for the AMI, such as IAM roles or tags.
+   - Click on the "Create Image" button.
+
+
+## The steps to create an EC2 instance from the custom AMI that you created in the previous question:
+
+   - Go to the Amazon EC2 console at https://console.aws.amazon.com/ec2/.
+   - Click on the "Launch Instance" button.
+   - In the "Step 1: Choose an Amazon Machine Image (AMI)" section, click on the "My AMIs" tab.
+   - Select the custom AMI that you have created previously from the list of available images.
+   - Choose an instance type for your instance.
+   - Configure your instance details, such as the number of instances to launch, network settings, and storage options.
+   - Add any additional tags or user data for your instance.
+   - Configure security groups to allow inbound and outbound traffic.
+   - Review your instance details and click on the "Launch" button.
+   - Select an existing key pair or create a new one to securely connect to your instance.
+    
+ ## The steps to configure your local .ssh/config file to connect to remote EC2 instances:
+
+   - Open a terminal window on your local machine.
+   - Navigate to your home directory by typing cd ~.
+   - Create a new .ssh directory by typing mkdir .ssh.
+   - Change the permissions on the .ssh directory by typing chmod 700 .ssh.
+   - Navigate to the .ssh directory by typing cd .ssh.
+   - Create a new file named config by typing touch config.
+   - Open the config file with a text editor, such as nano or vim.
+   - Add a new section for the remote EC2 instance that you want to connect to, using the following format:
+   ```
+   Host demo
+    User                   <username> 
+    HostName               <Public DNS or IP Address of your instance>
+    Port                   22
+    IdentitiesOnly         yes
+    IdentityFile           </path/to/your/private/key>
+    UserKnownHostsFile     /dev/null
+    StrictHostKeyChecking  no
+    PasswordAuthentication no
+    TCPKeepAlive           yes
+   ```
+   - Save and close the config file.
+   - Set the permissions on the config file by typing chmod 600 config.
+   
+  You can now connect to the remote EC2 instance by typing ssh demo in the terminal, where demo is the name you chose for this remote host in the config
   
-- cp : used to copy the files nd directories from one location to another.
-```
-cp /tmp/.tar* /opt/
-```
-- cp -r : used to recursively copy a directory and its contents to another location.
-```
-cp -r /tmp/.tar* /opt/
-```
-- cp -rp : used to recursively copy a directory and its contents to another location, while preserving the permissions and timestamps of the original files and directories. 
-```
-cp -rp /tmp/.tar* /opt/
-```
-- sed : used to perform text transformations on a file or input stream. It can be used to search for a particular pattern and replace it with another pattern. 
-```
-sed 's/abc/123/' file.txt
-```
-- find : to search for files and directories based on various criteria.
-```
-find -size -/+1M ; find -mtine -30; find -name ".php*"
-```
-  - size : To find files based on their size *-size*
-  - date : To find files based on their date *-mtime*
-  - keyword : To find files based on a specific keyword, *-name*
-- grep : used to search for patterns in files or standard input. It stands for "global regular expression print".
-```
-grep "MySql"
-```
-- grep -i : used to search for a keyword in a case-insensitive manner
-```
-grep -i "mysql'
-```
-- du : used to display the disk space occupied by files or directories
-```
-du
-```
-- df : used to display the disk space availble on the file system
-```
-df
-```
-- diff : used to display the differences between two different files
-```
-diff 123.txt abc.txt
-```
-- wc -l : used to display the count of lines in a specified file
-```
-wc -l abc.txt
-```
-- tar : used to archeive the multiple files into a single .tar file
-```
-tar -cf abc.tar abc ; tar -xf abc.tar
-```
-- zip : used to compress the file size which is easy to transfer
-```
-zip abc 123
-```
-- unzip : used to uncompress the file to attain its original file size
-```
-unzip abc.zip
-```
-- ln : used to create the hard link of the specified file in a specified path
-```
-ln /dir/abc.txt .
-```
-##### for soft link
-```
-ln -s /dir/abc.txt .
-```
-## 2.USER MANAGEMENT
+  ## NACL 
+  
+  <img src="https://i.ytimg.com/vi/tLAgYQlMWGo/maxresdefault.jpg" width="500" height="250">
+ 
+ > - Network Access Control List is a security feature offered by AWS (Amazon Web Services) that helps to control traffic to and from your instances in a VPC (Virtual Private Cloud). NACLs are stateless, meaning that they apply to inbound and outbound traffic separately.
 
-- useradd - : used to create the user
-```
-useradd pavan
-```
-- useradd -m : used to create the home directory for a user
-```
-useradd -m pavan
-```
-- usermod -aG : used to add a user to an additional group
-```
-usermod -aG sudo pavan
-```
-- usermod -G : used to remove a user from a group
-```
-usermod -G sudo pavan
-```
-- usermod -s : used to change the login shell of a user
-```
-usermod -s pavan
-```
-- usermod -d : used to change the home directory of a user
-```
-usermod -d /home/pawan pavan
-```
-- usermod -l : used to change the username of the user
-```
-usermod -l kumar pavan
-```
-- usermod -L : used to lock the user
-```
-usermod -L pavan
-```
-- usermod -U : used to unlock the user
-```
-usermod -U pavan
-```
-- userdel - : used to delete the user
-```
-userdel pavan
-```
-- userdel -r : used to del the user along with its home directory
-```
-userdel -r pavan
-```
-- passwd - : used to create/change/update the password for a user
-```
-passwd pavan
-```
-- passwd -d : used to delete the password of a user
-```
-passwd -d pavan
-```
-- passwd -e : used to force the user to change the password
-```
-passwd -e pavan
-```
-- passwd -l : used to lock the password of a user
-```
-passwd -l pavan
-```
-- passwd -u : used to unlock the passsowrd of a user
-```
-passwd -u pavan
-```
-- passwd -n : used to set the minimum password lifetime to change again
-```
-passwd -n 10 pavan
-```
+> - NACLs are similar to a firewall, but they operate at the subnet level rather than at the instance level. This means that a single NACL can be used to control traffic for multiple instances within a subnet. NACLs allow you to create rules that allow or deny traffic based on IP addresses, port numbers, and protocols.
 
-## 3.ACCESS MANAGEMENT
-
-- ssh : used to securely connect to a remote computer or a server and allows secure remote access, file transfer and command execution
-```
-ssh -i "key.pem" ubuntu@ip_address
-```
-- scp : used to securely transfer the files between two linux based systems
-```
-scp -r "key.pem" ./file1 ubuntu@ip_address:/home/ubuntu/
-```
-- sudo : used to perform administrative tasks without logging in as a root user
-```
-sudo useradd kumar
-```
-- su : used to switch from one user to another user / root user
-```
-su kumar
-```
-- chmod : used to change the permissions of a file or directory
-```
-chmod 400 file1 | chmod u+r file1
-```
-- chown : used to change the owner and group of a file or directory
-```
-chown user:group file1
-```
-
-## 4.CONFIGURATION MANAGEMENT
-
-- env : used to display the current environment variables
-```
-env MYVAR=myvalue ls
-
-```
-- PATH : used to specify the list of directories where executable programs are located
-```
-export PATH=$HOME/mydir:$PATH
-
-echo $PATH
-```
-- echo : used to prints out a message to the console
-```
-echo $PATH
-```
-- export : used to create an environment variable
-```
-export PATH=$HOME/mydir:$PATH
-```
-- hostname : used to prints out the name of the current host
-```
-hostname
-```
-- netstat : used to displays the network connections, routing tables and other network interface statistics
-```
-netstat -tulpn
-```
-```  -t: Displays TCP connections.
-    -u: Displays UDP connections.
-    -l: Displays listening ports.
-    -p: Shows the process ID (PID) and name that the connection is associated with.
-    -n: Shows the numeric address and port numbers, rather than resolving them to host and service names. 
- ```
-    
-    
-- crontab : used to create, view, delete the crontab files which controls the scheduling of commands to be run at specified time
-- crontab -e : used to create or edit the crontab file
-```
-crontab -e
-```
-*Once the crontab file is open, you can add new entries or modify existing ones using the following syntax:*
-```
-* * * * * command
-```
-*The five asterisks represent the minute, hour, day of the month, month, and day of the week on which the command should be run.*
-
-- crontab -l : used to list the current cron jobs
-```
-crontab -l
-```
-- kill : used to terminate a process by using pid
-```
-kill -9 <1682>
-```
-- pkill : used to sends a signal to a process based on its name
-```
-pkill <tomcat>
-```
-- wget : used to downloads file from the internet
-```
-wget https://dlcdn.apache.org/tomcat/tomcat-10/v10.1.5/bin/apache-tomcat-10.1.5.tar.gz
-```
-- curl : used to transfer data between servers using various protocols (HTTPS,HTTPS,SCP)
-```
-curl  -o outputtxt.html https://ubuntu.com/download/desktop.html
-```
-- ping : used to test the connectivity between two networked devices
-```
-ping 8.8.8.8
-```
-- uname : used to prints out system information
-```
-uname
-```
-- history : used to prints out the historty of the executed commands
-```
-history 
-```
-- ps : used to displays information about currently running processes
-```
-ps
-```
-- ps -ux : used to view the list of processes running on the system, including their resource utilization and ownership information
-```
-ps -ux
-```
-- ps -ef : used to view the process tree hierarchy of all processes 
-```
-ps -ef
-```
-- ps -ef | grep <pid> : used to view the information about a specific process by its PID
-```
-ps -ef | grep <1682>
-```
-
-## 5.Log Management
-
-- #### Syslog
-> *Syslog* is a standard protocol used to log messages from different software applications and system services. It is a way to centralize logging across multiple servers and applications, making it easier to manage and troubleshoot issues.
-
-- #### Journalctl
-> *Journalctl* is a command-line utility used to query and view logs collected by the systemd journal. It can be used to search for specific log messages, filter logs based on different criteria, and view logs in various formats.
-
-- #### Custom logs
-> *Custom logs* refer to log messages that are generated by custom applications or scripts. It can contain any type of information, from debug messages to application-specific metrics, and are used to help developers and system administrators monitor and troubleshoot their applications.
-
-## 6.Network management
-
-> - **Internal network** refers to the network of devices within an organization or a specific location.
-	
-> - **External network** refers to the network outside of the organization or location, typically the internet.
-	
-- A **subnet** is a portion of a larger network
-	- A **private subnet** is a subset of IP addresses reserved for use within a private network.They are are typically used for internal communication within an organization.
-	 - A **Public subnet** is assigned globally unique IP addresses and can be accessed from the internet. They are used for internet-facing services.
-	
-- **Ports**
-
-	In computer networking, a port is a communication endpoint for sending and receiving data.
-	- **Well-known ports**: *Well-known ports* are predefined and registered with the Internet Assigned Numbers Authority (IANA). They range from 0 to 1023 and are used by commonly recognized services, such as HTTP (port 80), HTTPS (port 443), FTP (port 21), SSH (port 22), Telnet (port 23), and SMTP (port 25).
-	- **Registered ports**: *Registered ports* are those in the range of 1024 to 49151. They can be used by applications upon registration with the IANA, but are not as commonly recognized as well-known ports. Examples include Oracle database (port 1521), MySQL (port 3306), and Windows Remote Desktop Protocol (port 3389).
-	- **Dynamic or private ports**: *Dynamic or private ports* are those in the range of 49152 to 65535. They are used by the operating system or applications for temporary communication between network endpoints, and are not registered with IANA. These ports are usually assigned by the operating system when a connection is established.
-	- **Ephemeral ports**: *Ephemeral ports* are dynamic ports that are assigned by the operating system to a client application when it initiates a connection to a server. These ports typically range from 49152 to 65535, and are used to facilitate communication between the client and server.
-	
-> - **CIDR** (*Classless Inter-Domain Routing*) is a method of IP address allocation that allows for more efficient use of the available IP address space. *CIDR range calculations* are used to determine the network and host portions of an IP address and subnet mask pair, and to calculate the range of IP addresses that belong to a particular network.
-	
-
-> - **HTTP** (Hypertext Transfer Protocol) is a protocol used to transmit data over the internet.
-	
-> - **HTTPS** (Hypertext Transfer Protocol Secure) is a secure version of HTTP that uses encryption to protect the data transmitted between the web server and the client.
-	
-	
-> - **TCP** (*Transmission Control Protocol*) and **UDP** (*User Datagram Protocol*) are two transport layer protocols used for sending data over IP networks. 
-	- TCP provides reliable, ordered, and error-checked delivery of data 
-	- UDP provides a faster and simpler connectionless communication.
-	
-
-- ifconfig : used to configure and view network interface parameters such as IP address, netmask, broadcast address, and network interface status
-```
-ifconfig	
-```
-	
-## Application/Web Servers:
-- An application or web server is a software program that runs on a computer to serve web applications, web pages, or other network services to client devices.
-	- A **web server** is designed to deliver static and dynamic content over the web for delivering content quickly and efficiently. It typically handles client requests for web pages or files, and responds with the appropriate content. Examples of web servers include *Apache HTTP Server*, *NGINX*, and *Microsoft IIS*.
-	- An **Application server** is designed to host and manage web applications that require more complex functionality, such as processing user input, managing session data, and communicating with backend databases or other systems. Examples of application servers include *Apache Tomcat*, *JBoss*, and *IBM WebSphere*.
-	
-## Load Balancing:
-> *Load balancing* is a technique used to distribute network traffic across multiple servers or network resources by preventing overload on individual servers and maintaining uptime. Load balancers typically use algorithms to distribute traffic based on factors such as server availability, current traffic levels, and geographic location.
-
-## High Availability:
-> *High Availability* (HA) refers to the ability of a network or network infrastructure to maintain its availability and uptime even in the face of failures or outages. The goal of HA is to ensure that critical services or applications remain accessible to users, even if one or more components of the network fail.
-
-- ##### There are several ways to achieve high availability in a network, including
-
-	- **Redundancy**: This involves duplicating critical components of the network, such as switches, routers, or servers, so that if one fails, another can take over without interruption to service.
-	- **Load balancing**: This involves distributing traffic across multiple servers or paths to prevent any single server or path from becoming overloaded or unavailable.
-	- **Failover**: This involves automatically switching to a backup or secondary system in the event of a failure or outage. For example, if a primary server fails, a secondary server can automatically take over to ensure continuity of service.
-	- **Network virtualization**: This involves creating virtual instances of network devices or services, which can be moved or migrated between physical devices as needed to ensure continuous service.
-## Create shell script to install Application servers and proxy tools
-Installing and configuring **Apache Tomcat** as an Application server and **Squid** as a proxy tool
-```
-#!/bin/bash
-
-# Install Java Development Kit (JDK)
-sudo apt-get update
-sudo apt-get install -y default-jdk
-
-# Install Apache Tomcat server
-cd /tmp/
-wget https://dlcdn.apache.org/tomcat/tomcat-10/v10.1.5/bin/apache-tomcat-10.1.5.tar.gz
-tar -xzvf apache-tomcat-10.1.5.tar.gz
-sudo mv apache-tomcat-10.1.5.tar.gz /opt/tomcat	
-chown -R tomcat:tomcat /opt/tomcat
-rm -rf /etc/systemd/system/tomcat.service
-
-cat <<EOT>> /etc/systemd/system/tomcat.service
-[Unit]
-Description=Tomcat
-After=network.target
-[Service]
-Type=forking
-
-User=tomcat
-Group=tomcat
-
-Environment="JAVA_HOME=/usr/lib/jvm/java-1.11.0-openjdk-amd64"
-Environment="JAVA_OPTS=-Djava.security.egd=file:///dev/urandom"
-Environment="CATALINA_BASE=/opt/tomcat"
-Environment="CATALINA_HOME=/opt/tomcat"
-Environment="CATALINA_PID=/opt/tomcat/temp/tomcat.pid"
-Environment="CATALINA_OPTS=-Xms512M -Xmx1024M -server -XX:+UseParallelGC"
-
-ExecStart="/opt/tomcat/bin/startup.sh"
-ExecStop="/opt/tomcat/bin/shutdown.sh"
-
-[Install]
-WantedBy=multi-user.target
-EOT
-systemctl daemon-reload
-systemctl start tomcat
-systemctl enable tomcat
-
-cd /tmp/
-wget https://raw.githubusercontent.com/pavanmohan-ce/Linux/master/tomcat-users.xml
-wget https://raw.githubusercontent.com/pavanmohan-ce/Linux/master/context.xml
-cp tomcat-users.xml /opt/tomcat/conf/tomcat-users.xml
-cp context.xml /opt/tomcat/webapps/manager/META-INF/
-systemctl restart tomcat
-echo "Done"
-
-# Install Squid proxy server
-sudo apt-get install -y squid	
-```
-### configure proxy to access application server through proxy
-```
-# Configure Squid proxy server
-sudo bash -c 'cat << EOF >> /etc/squid/squid.conf
-http_access allow all
-http_port 3128
-EOF'
-
-sudo systemctl restart squid
-```
+> - When traffic enters a subnet, AWS applies the NACL rules in the inbound order to determine whether to allow or deny the traffic. When traffic leaves a subnet, AWS applies the NACL rules in the outbound order. If a rule in the inbound or outbound direction denies traffic, then that traffic is dropped and not forwarded.
